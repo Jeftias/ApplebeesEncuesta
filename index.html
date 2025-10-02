@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applebee's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-image: url('Fondo.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: #414143;
+        }
+
+        #header {
+            background-color: #AB1F2E;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            height: 100%;
+            background-color: #AB1F2E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #AB1F2E;
+            padding: 30px;
+            padding-top: 0;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #AB1F2E;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            padding-top: 20px;
+        }
+
+        .question {
+            background: #f9f9f9;
+            margin-bottom: 20px;
+            color: #AB1F2E;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Ajuste para que el texto y el input se alineen bien */
+        .options label {
+            font-weight: normal;
+            /* Quitamos el bold de las opciones */
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 8px;
+            /* Espacio entre opciones */
+            color: #414143;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #AB1F2E;
+            height: 100px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        textarea:focus {
+            border-color: #CADB2F;
+            box-shadow: 0 0 5px #CADB2F80;
+            outline: none;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #414143;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #CADB2F;
+        }
+
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            margin: 0;
+            margin-right: 10px;
+
+            width: 18px;
+            height: 18px;
+            border: 2px solid #a0a0a0;
+            border-radius: 50%;
+            background-color: #fff;
+            transform: translateY(-1px);
+            display: grid;
+            place-content: center;
+        }
+
+        input[type="radio"]::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            background-color: #CADB2F;
+        }
+
+        input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+
+        input[type="radio"]:checked {
+            border-color: #CADB2F;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="logo-container">
+            <img src="ApplebeesLogo.png"
+                style="object-fit: contain; object-position: center; width: 100%; height: 80%;">
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Encuesta de Satisfacción</h1>
+        <p>¡Gracias por tu tiempo! Tu opinión es muy importante para nosotros y nos ayuda a mejorar.</p>
+
+        <form action="#" method="POST">
+
+            <div class="question">
+                <label for="facilidad-uso">1. ¿Le resultó fácil usar el botón para llamar al mesero?</label>
+                <div class="options">
+                    <label><input type="radio" id="muy-facil" name="facilidad-uso" value="muy-facil"> Muy fácil</label>
+                    <label><input type="radio" id="facil" name="facilidad-uso" value="facil"> Fácil</label>
+                    <label><input type="radio" id="regular-facilidad" name="facilidad-uso" value="regular">
+                        Regular</label>
+                    <label><input type="radio" id="dificil" name="facilidad-uso" value="dificil"> Difícil</label>
+                    <label><input type="radio" id="muy-dificil" name="facilidad-uso" value="muy-dificil"> Muy
+                        difícil</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="velocidad-mesero">2. ¿Qué tan rápido acudió el mesero después de presionar el botón?</label>
+                <div class="options">
+                    <label><input type="radio" name="velocidad-mesero" value="muy-rapido"> Muy rápido</label>
+                    <label><input type="radio" name="velocidad-mesero" value="rapido"> Rápido</label>
+                    <label><input type="radio" name="velocidad-mesero" value="regular"> Regular</label>
+                    <label><input type="radio" name="velocidad-mesero" value="lento"> Lento</label>
+                    <label><input type="radio" name="velocidad-mesero" value="muy-lento"> Muy lento</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="mejora-experiencia">3. ¿Cree que el botón mejoró su experiencia en el restaurante?</label>
+                <div class="options">
+                    <label><input type="radio" name="mejora-experiencia" value="si"> Sí</label>
+                    <label><input type="radio" name="mejora-experiencia" value="no"> No</label>
+                    <label><input type="radio" name="mejora-experiencia" value="indiferente"> Indiferente</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="actitud-mesero">4. ¿Cómo califica la capacitación y actitud del mesero que lo
+                    atendió?</label>
+                <div class="options">
+                    <label><input type="radio" name="actitud-mesero" value="excelente"> Excelente</label>
+                    <label><input type="radio" name="actitud-mesero" value="buena"> Buena</label>
+                    <label><input type="radio" name="actitud-mesero" value="regular"> Regular</label>
+                    <label><input type="radio" name="actitud-mesero" value="mala"> Mala</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="tiempo-espera">5. ¿El tiempo de espera para recibir su pedido fue adecuado?</label>
+                <div class="options">
+                    <label><input type="radio" name="tiempo-espera" value="muy-adecuado"> Muy adecuado</label>
+                    <label><input type="radio" name="tiempo-espera" value="adecuado"> Adecuado</label>
+                    <label><input type="radio" name="tiempo-espera" value="regular"> Regular</label>
+                    <label><input type="radio" name="tiempo-espera" value="inadecuado"> Inadecuado</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="satisfaccion-general">6. En general, ¿qué tan satisfecho quedó con la atención
+                    recibida?</label>
+                <div class="options">
+                    <label><input type="radio" name="satisfaccion-general" value="muy-satisfecho"> Muy
+                        satisfecho</label>
+                    <label><input type="radio" name="satisfaccion-general" value="satisfecho"> Satisfecho</label>
+                    <label><input type="radio" name="satisfaccion-general" value="neutral"> Neutral</label>
+                    <label><input type="radio" name="satisfaccion-general" value="insatisfecho"> Insatisfecho</label>
+                    <label><input type="radio" name="satisfaccion-general" value="muy-insatisfecho"> Muy
+                        insatisfecho</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="gusto-mas">7. ¿Qué aspecto del servicio le gustó más?</label>
+                <textarea id="gusto-mas" name="gusto-mas" placeholder="Escriba su respuesta aquí..."></textarea>
+            </div>
+
+            <div class="question">
+                <label for="mejoras">8. ¿Qué cree que se podría mejorar en la atención o el uso del botón?</label>
+                <textarea id="mejoras" name="mejoras" placeholder="Sus sugerencias son valiosas..."></textarea>
+            </div>
+
+            <div class="question">
+                <label for="interes-promociones">9. ¿Le interesaría recibir descuentos o promociones por contestar
+                    encuestas o participar en dinámicas?</label>
+                <div class="options">
+                    <label><input type="radio" name="interes-promociones" value="si"> Sí</label>
+                    <label><input type="radio" name="interes-promociones" value="no"> No</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="tipo-promocion">10. ¿Qué tipo de promoción le motivaría más a regresar?</label>
+                <textarea id="tipo-promocion" name="tipo-promocion"
+                    placeholder="Ej: 2x1, descuentos, productos gratis..."></textarea>
+            </div>
+
+            <button type="submit">Enviar Respuestas</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
